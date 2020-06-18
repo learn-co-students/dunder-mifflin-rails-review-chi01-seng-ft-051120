@@ -1,0 +1,24 @@
+<h1>New Employee Signup!</h1>
+
+<% if @employee.errors.any? %>
+  <% @employee.errors.full_messages.each do |message| %>
+     <h3><%= message %> </h3>
+  <%end%>
+<%end%>
+
+<%= form_for @employee do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %><br>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %><br>
+  <%= f.label :alias %>
+  <%= f.text_field :alias %><br>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  <%= f.label :office %>
+  <%= f.text_field :office %><br>
+  <%= f.label :img_url %>
+  <%= f.text_field :img_url %><br>
+  <div>Dog: <%= f.collection_select :dog_id, @dogs, :id, :name %></div>
+  <%= f.submit "Signup!" %>
+<%end%>
