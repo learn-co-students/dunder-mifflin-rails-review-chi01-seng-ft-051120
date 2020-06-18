@@ -1,0 +1,6 @@
+<p>This is the Show Page of <%= @dog.name %> the dog!!'</p>
+<p>Breed: <%= @dog.breed %> </p>
+<p>Age: <%= @dog.age %> </p>
+<p>Employees: <% @dog.employees.each do |employee| %>
+  <ul><%= employee.first_name + ' ' + employee.last_name %></ul>
+<%end%>
